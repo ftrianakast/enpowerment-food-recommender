@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
-import { Dish } from './../model/dish';
+import { Dish } from '@model/dish';
 
 @Injectable()
 export class DishesService {

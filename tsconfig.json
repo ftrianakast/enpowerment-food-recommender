@@ -18,8 +18,10 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@domain/*": ["src/com/foodrecommender/enpowerment/domain"],
-      "@root/*": ["."]
+      "@domain/*": ["src/com/foodrecommender/enpowerment/domain/*"],
+      "@model/*": ["src/com/foodrecommender/enpowerment/domain/model/*"],
+      "@service/*": ["src/com/foodrecommender/enpowerment/domain/service/*"],
+      "@root/*": ["." ]
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
+import { Restaurant } from '@model/Restaurant';
 
 @Injectable()
 export class RestaurantsService {

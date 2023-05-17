@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
-import { User } from '../model/user';
+import { User } from '@model/user';
 
 @Injectable()
 export class UserService {

@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { RecommendationsService } from '../../domain/service/recommendationservice';
+import { RecommendationsService } from '@service/recommendationservice';
 
 @Controller('recommendations')
 export class RecommendationsController {

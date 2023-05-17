@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { UserService } from '../service/userservice';
-import { RestaurantsService } from '../service/restaurantsservice';
-import { DishesService } from '../service/dishesservice';
+import { UserService } from '@service/userservice';
+import { RestaurantsService } from '@service/restaurantsservice';
+import { DishesService } from '@service/dishesservice';
 
 @Injectable()
 export class RecommendationsService {
