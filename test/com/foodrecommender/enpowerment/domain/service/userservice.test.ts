@@ -1,5 +1,5 @@
 import { DynamoDB } from 'aws-sdk';
-import { UserService } from '../src/com/foodrecommender/enpowerment/domain/service/UserService';
+import { UserService } from '../../../../../../src/com/foodrecommender/enpowerment/domain/service/userservice';
 
 // Mock the aws-sdk
 jest.mock('aws-sdk', () => {
