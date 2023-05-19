@@ -58,16 +58,28 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## Support
+# For running the project
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+$ docker-compose build
+$ docker-compose up
+```
 
-## Stay in touch
+The application uses a dynamo local database.
+The application is populated with data described under scripts/populate-tables.ts
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Once application is running you have access to next endpoints
 
-## License
+```bash
 
-Nest is [MIT licensed](LICENSE).
+GET /users/:id
+
+PUT /users/:userid
+
+DELETE /users/:userid
+
+POST /users
+
+GET /recommendations/:userid
+
+```bash
