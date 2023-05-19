@@ -13,4 +13,8 @@ RUN wget -O dynamodb_local.tar.gz https://s3-us-west-2.amazonaws.com/dynamodb-lo
 EXPOSE 8000
 
 # Start DynamoDB Local
-CMD ["java", "-Djava.library.path=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-sharedDb"]
+# Start DynamoDB Local and run the scripts
+CMD java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb && \
+    sleep 10 && \
+    node scripts/create-tables.ts && \
+    node scripts/populate-tables.ts

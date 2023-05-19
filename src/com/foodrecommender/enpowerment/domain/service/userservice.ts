@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
 import { User } from '@model/user';
+import { configureDynamoDB } from '@infrastructure/dynamo.config';
 
 @Injectable()
 export class UserService {
   private readonly dynamoDb: DynamoDB.DocumentClient;
 
   constructor() {
+    configureDynamoDB();
     this.dynamoDb = new DynamoDB.DocumentClient();
   }
 

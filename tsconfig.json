@@ -21,6 +21,7 @@
       "@domain/*": ["src/com/foodrecommender/enpowerment/domain/*"],
       "@model/*": ["src/com/foodrecommender/enpowerment/domain/model/*"],
       "@service/*": ["src/com/foodrecommender/enpowerment/domain/service/*"],
+      "@infrastructure/*": ["src/com/foodrecommender/enpowerment/infrastructure/*"],
       "@root/*": ["." ]
     }
   }

@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { DynamoDB } from 'aws-sdk';
 import { Restaurant } from 'src/com/foodrecommender/enpowerment/domain/model/restaurant';
+import { configureDynamoDB } from '@infrastructure/dynamo.config';
 
 @Injectable()
 export class RestaurantsService {
   private readonly dynamoDb: DynamoDB.DocumentClient;
 
   constructor() {
+    configureDynamoDB();
     this.dynamoDb = new DynamoDB.DocumentClient();
   }
 

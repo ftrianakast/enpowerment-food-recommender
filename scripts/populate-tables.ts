@@ -1,7 +1,7 @@
 import AWS, { ConfigurationOptions } from 'aws-sdk';
 
 const config: ConfigurationOptions & { region: string; endpoint: string } = {
-    region: 'us-west-2', // Set the appropriate AWS region
+    region: 'local', // Set the appropriate AWS region
     endpoint: 'http://localhost:8000', // The endpoint for DynamoDB Local
 };
 
