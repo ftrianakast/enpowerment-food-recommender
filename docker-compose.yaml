@@ -10,6 +10,7 @@ services:
       - db
     environment:
       - DYNAMODB_ENDPOINT=db:8000
+    command: ["sh", "-c", "npm install aws-sdk && npm install typescript && tsc /scripts/create-tables.ts && node /scripts/create-tables.js"]
 
   db:
     build:
