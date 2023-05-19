@@ -1,5 +1,16 @@
-FROM amazon/dynamodb-local:latest
+# Base image
+FROM openjdk:8-jre-alpine
 
+# Set the working directory
+WORKDIR /dynamodb
+
+# Download and extract DynamoDB Local
+RUN wget -O dynamodb_local.tar.gz https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz && \
+    tar -xvf dynamodb_local.tar.gz && \
+    rm dynamodb_local.tar.gz
+
+# Expose the DynamoDB port
 EXPOSE 8000
 
-CMD ["docker-entrypoint.sh", "-jar", "DynamoDBLocal.jar", "-sharedDb"]
+# Start DynamoDB Local
+CMD ["java", "-Djava.library.path=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-sharedDb"]

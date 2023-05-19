@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
-import { User } from '@model/User';
-import { UserService } from '@service/UserService';
+import { User } from 'src/com/foodrecommender/enpowerment/domain/model/user';
+import { UserService } from 'src/com/foodrecommender/enpowerment/domain/service/userservice';
 
 @Controller('users')
 export class UsersController {

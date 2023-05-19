@@ -1,20 +1,20 @@
 version: '3'
+
 services:
+  db:
+    image: amazon/dynamodb-local:latest
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./dynamodb-data:/data
+      - ./scripts:/scripts
+    build:
+      context: .
+      dockerfile: Dockerfile.db 
+    
   app:
     build:
       context: .
       dockerfile: Dockerfile.app
-    ports:
-      - '3000:3000'
     depends_on:
       - db
-    environment:
-      - DYNAMODB_ENDPOINT=db:8000
-    command: ["sh", "-c", "npm install aws-sdk && npm install typescript && tsc /scripts/create-tables.ts && node /scripts/create-tables.js"]
-
-  db:
-    build:
-      context: .
-      dockerfile: Dockerfile.db
-    ports:
-      - '8000:8000'
